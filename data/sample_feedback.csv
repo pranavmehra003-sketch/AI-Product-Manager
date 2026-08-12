@@ -1,0 +1,183 @@
+feedback,source,date
+"The app crashes whenever I try to upload a CSV file larger than 10MB",support_ticket,2024-09-01
+"Reports take forever to load, sometimes more than 2 minutes for basic queries",review,2024-09-01
+"Please add dark mode, my eyes hurt after long sessions at night",feature_request,2024-09-02
+"The mobile app is unusable on iPhone 15, nothing loads properly after update",review,2024-09-02
+"I love the dashboard but wish I could customize the widgets layout",feedback,2024-09-03
+"Export to PDF is broken, it only exports the first page and cuts off charts",support_ticket,2024-09-03
+"The search function doesn't find results that clearly exist in our data",review,2024-09-04
+"Can you add more chart types? I desperately need a waterfall chart for finance",feature_request,2024-09-04
+"Notifications are not working at all, I'm missing critical business alerts",support_ticket,2024-09-05
+"The onboarding is extremely confusing, took me 3 days to figure out basic features",review,2024-09-05
+"Please add API access so I can integrate with our internal Salesforce tools",feature_request,2024-09-06
+"The filter options on reports page reset every time I navigate away",support_ticket,2024-09-06
+"Collaboration features would be amazing, we need to share dashboards team-wide",feature_request,2024-09-07
+"Your customer support is incredibly slow, waited 4 days for any response",review,2024-09-07
+"The pricing is too high for small teams, please consider a startup plan",feedback,2024-09-08
+"App crashes on Chrome when I have more than 5 tabs open with reports",support_ticket,2024-09-08
+"Charts don't render correctly on Windows with 4K display resolution",support_ticket,2024-09-09
+"I need a way to schedule automated report delivery to my email weekly",feature_request,2024-09-09
+"The date picker is very difficult to use, takes too many clicks to select range",feedback,2024-09-10
+"Please add Slack integration so alerts go directly to our workspace",feature_request,2024-09-10
+"Loading indicator doesn't show when reports are generating, I thought it crashed",feedback,2024-09-11
+"Data refresh is too slow, it takes 45 minutes to sync our database",support_ticket,2024-09-11
+"The table sorting doesn't work correctly with numeric columns",support_ticket,2024-09-12
+"I would pay extra for SSO/SAML integration with our corporate identity provider",feature_request,2024-09-12
+"The drill-down charts are amazing! This is exactly what we needed",positive,2024-09-13
+"Best analytics tool I've used in 10 years of product management",positive,2024-09-13
+"Report sharing links expire too quickly, need at least 7 days",feedback,2024-09-14
+"Can you add a Jira integration to track feature metrics alongside tickets?",feature_request,2024-09-14
+"The app is too slow on tablets, the touch response feels laggy",feedback,2024-09-15
+"I want to be able to add custom calculated fields to my reports",feature_request,2024-09-15
+"Memory usage is extremely high, my browser crashes after 30 minutes of use",support_ticket,2024-09-16
+"Please provide CSV import templates so I know the exact format required",feedback,2024-09-16
+"The bulk export feature doesn't work for datasets with more than 50000 rows",support_ticket,2024-09-17
+"I need better role-based access control for my enterprise team of 200+",feature_request,2024-09-17
+"Dark mode please! This is 2024, every professional app should have it",feature_request,2024-09-18
+"Reports page loads forever, I gave up and exported raw CSV instead",review,2024-09-18
+"The comparison feature across time periods is broken, shows wrong numbers",support_ticket,2024-09-19
+"My entire session data got lost when the browser refreshed unexpectedly",support_ticket,2024-09-19
+"The app would be perfect with natural language query support like ChatGPT",feature_request,2024-09-20
+"Billing portal keeps throwing errors when I try to update payment method",support_ticket,2024-09-20
+"When will you support Google BigQuery as a data source?",feature_request,2024-09-21
+"The pivot table functionality needs a complete overhaul, it's very unintuitive",feedback,2024-09-21
+"Please fix the timezone issue, our reports show wrong times for US East Coast",support_ticket,2024-09-22
+"I can't figure out how to delete old dashboards, the UX is confusing",feedback,2024-09-22
+"The product is great but the documentation is severely outdated",feedback,2024-09-23
+"Can we get a sandbox environment to test before pushing changes to production?",feature_request,2024-09-23
+"Mobile app crashes every time I try to zoom into a chart on Android",support_ticket,2024-09-24
+"The AI insights feature preview looked amazing, when will it be released?",feature_request,2024-09-24
+"Two-factor authentication would make me feel much more secure with my data",feature_request,2024-09-25
+"App loading time on first launch is 8-10 seconds which is unacceptable",review,2024-09-25
+"Reports are excellent once loaded, just the loading speed that's the issue",feedback,2024-09-26
+"Please add keyboard shortcuts for power users who live in the app daily",feature_request,2024-09-26
+"The dashboard customization is limited, need more widget options and layouts",feedback,2024-09-27
+"Can't figure out how to add a second Y-axis to combo charts",feedback,2024-09-27
+"The onboarding video helped a lot but needs to be updated with new features",feedback,2024-09-28
+"App crashed and I lost 2 hours of dashboard configuration work",support_ticket,2024-09-28
+"When exporting to Excel the formatting gets completely messed up",support_ticket,2024-09-29
+"The predictive analytics feature needs more training data to be accurate",feedback,2024-09-29
+"Please add a feature to annotate charts with business context and events",feature_request,2024-09-30
+"Report schedule emails are arriving 3-4 hours late every single time",support_ticket,2024-09-30
+"The dark theme option would significantly reduce eye strain for our night shift",feature_request,2024-10-01
+"Mobile performance improved this month, thank you for the recent update!",positive,2024-10-01
+"I need to compare metrics across multiple customer segments simultaneously",feature_request,2024-10-02
+"The CSV upload validation errors are not descriptive enough to fix issues",feedback,2024-10-02
+"Please add Zapier integration so we can automate our workflows",feature_request,2024-10-03
+"Report rendering occasionally shows old cached data instead of fresh data",support_ticket,2024-10-03
+"App crashed 3 times today while working on quarterly board presentation",support_ticket,2024-10-04
+"The color blind accessibility modes would help our entire design team",feature_request,2024-10-04
+"I wish there was a way to save and share report templates with my team",feature_request,2024-10-05
+"The account settings page is confusing and hard to navigate through",feedback,2024-10-05
+"Multi-currency support is absolutely critical for our international business",feature_request,2024-10-06
+"Charts load much faster than last month, whatever you did worked perfectly",positive,2024-10-06
+"The public shareable dashboard links would be great for client presentations",feature_request,2024-10-07
+"I accidentally deleted a dashboard and there's no undo or recovery option",support_ticket,2024-10-07
+"Please add more decimal precision options for our financial reporting needs",feature_request,2024-10-08
+"The new onboarding wizard is a huge improvement over the old documentation",positive,2024-10-08
+"Real-time data streaming support would be a game changer for our operations team",feature_request,2024-10-09
+"The alerts system is unreliable, I receive duplicate notifications constantly",support_ticket,2024-10-09
+"Can't log in with Google SSO anymore after the recent system update",support_ticket,2024-10-10
+"The report builder is powerful but has a very steep learning curve for new users",feedback,2024-10-10
+"Absolutely love the new collaborative features that were just released!",positive,2024-10-11
+"Mobile app needs offline mode for when I'm traveling internationally",feature_request,2024-10-11
+"Please add the ability to embed reports directly into our company website",feature_request,2024-10-12
+"The dashboard is completely blank for new users with no guidance at all",feedback,2024-10-12
+"I need row-level security so different teams only see their own data",feature_request,2024-10-13
+"The performance degraded significantly after last Thursday's deployment",support_ticket,2024-10-13
+"Reports feature is vital for our operations but the loading speed kills productivity",review,2024-10-14
+"Please add more pre-built templates for common use cases and industries",feature_request,2024-10-14
+"The Stripe integration for billing tracking is not syncing correctly at all",support_ticket,2024-10-15
+"Dark mode is the single most requested feature in every tool survey I've done",feature_request,2024-10-15
+"I cannot believe there's still no mobile-optimized version after 2 years",review,2024-10-16
+"The new chart animations are beautiful but they slow down older computers",feedback,2024-10-16
+"App error: 'Failed to load resource' appears constantly in my browser console",support_ticket,2024-10-17
+"Please add audit logs so administrators can track who changed what and when",feature_request,2024-10-17
+"The data connection setup is way too technical for non-developer business users",feedback,2024-10-18
+"Your pricing page is confusing, I don't know which tier is right for my team",feedback,2024-10-18
+"Reports occasionally show NaN values for calculated metrics unexpectedly",support_ticket,2024-10-19
+"Can we have an in-app tutorial for advanced features? The docs aren't enough",feature_request,2024-10-19
+"The API rate limits are too restrictive for our high-volume data operations",feedback,2024-10-20
+"I switched from Tableau specifically for the cleaner UI, very happy so far",positive,2024-10-20
+"The bulk user management tools would save our admin team hours every week",feature_request,2024-10-21
+"Export takes 15+ minutes for large reports, the progress bar doesn't update",support_ticket,2024-10-21
+"The product has improved tremendously over the past 6 months, great work team",positive,2024-10-22
+"I need the ability to create custom color palettes for our brand guidelines",feature_request,2024-10-22
+"The search bar should search across all reports and dashboards simultaneously",feedback,2024-10-23
+"Single sign-on integration with Azure AD is absolutely required for enterprise",feature_request,2024-10-23
+"The loading spinner appears but reports never actually complete loading sometimes",support_ticket,2024-10-24
+"Please show a summary of what changed in each product update notification",feature_request,2024-10-24
+"The date range comparison feature is the best thing you've ever shipped",positive,2024-10-25
+"I would love AI-powered anomaly detection on my key business metrics",feature_request,2024-10-25
+"Session timeout is too frequent, I lose work during longer analysis sessions",feedback,2024-10-26
+"The customer success team is amazing and very helpful with onboarding",positive,2024-10-26
+"Please add LinkedIn and HubSpot as native data source integrations",feature_request,2024-10-27
+"Charts are cut off at the bottom on smaller laptop screens and tablets",support_ticket,2024-10-27
+"The performance is excellent on desktop but terrible on mobile devices",review,2024-10-28
+"Would love to have a command palette like VS Code for faster navigation",feature_request,2024-10-28
+"Data export is broken for international date formats (DD/MM/YYYY vs MM/DD/YYYY)",support_ticket,2024-10-29
+"The team collaboration features have genuinely transformed how we work",positive,2024-10-29
+"I need to set custom alert thresholds for each individual metric separately",feature_request,2024-10-30
+"Please improve the filter UI, it's very cluttered and hard to manage",feedback,2024-10-30
+"The app is using 2GB of RAM for a simple dashboard, this is unacceptable",support_ticket,2024-10-31
+"I love that you're adding AI features, the summarization feature is incredible",positive,2024-10-31
+"Seriously need dark mode for night usage. Please prioritize this feature",feature_request,2024-11-01
+"Reports load very slowly on our corporate network with firewall restrictions",support_ticket,2024-11-01
+"The new data connector is excellent! Set up took only 5 minutes vs hours before",positive,2024-11-02
+"Mobile app crashes immediately on startup after the latest iOS 18 update",support_ticket,2024-11-02
+"I need a way to create custom report templates my whole organization can reuse",feature_request,2024-11-03
+"The graph rendering has serious issues with datasets over 100,000 data points",support_ticket,2024-11-03
+"Please add support for PostgreSQL as a direct data source connection",feature_request,2024-11-04
+"The UI is beautiful and modern but the performance doesn't match the design",feedback,2024-11-04
+"Would love calendar integration to overlay business events on trend charts",feature_request,2024-11-05
+"Why does the app always ask me to log in again after just 1 hour of inactivity?",feedback,2024-11-05
+"The reports feature is excellent but it desperately needs sub-second loading",feedback,2024-11-06
+"I appreciate the attention to design but we need performance improvements most",feedback,2024-11-06
+"The mobile experience needs a complete redesign from the ground up urgently",review,2024-11-07
+"Data appears to be double-counted in the revenue reports since last update",support_ticket,2024-11-07
+"Can we get a free tier for individual contributors and freelancers?",feature_request,2024-11-08
+"The export functionality works beautifully now after the recent fix, thank you",positive,2024-11-08
+"Reports take way too long to load, this is the #1 blocker for daily use",review,2024-11-09
+"The dashboard widget library needs at minimum 10 more types of visualizations",feature_request,2024-11-09
+"App crashes consistently when switching between multiple browser tabs rapidly",support_ticket,2024-11-10
+"Dark mode is crucial for our medical team working in low-light environments",feature_request,2024-11-10
+"The predictive forecasting feature is incredible and worth the premium price",positive,2024-11-11
+"I need better data lineage tracking so I can audit where my numbers come from",feature_request,2024-11-11
+"The mobile app is beautiful but completely non-functional for actual work use",review,2024-11-12
+"Please fix the chart tooltip positioning bug that's been there for 6 months",support_ticket,2024-11-12
+"Report export generates corrupt Excel files about 30% of the time randomly",support_ticket,2024-11-13
+"The product roadmap visibility would help us plan our own development better",feature_request,2024-11-13
+"Loading time for reports has gotten noticeably worse in the past two weeks",feedback,2024-11-14
+"I'm evaluating Tableau as an alternative specifically because of performance issues",review,2024-11-14
+"Please add a way to merge and blend data from multiple data source connections",feature_request,2024-11-15
+"The user interface design is honestly world-class, love every interaction",positive,2024-11-15
+"Dark mode would make this the perfect tool for our creative studio environment",feature_request,2024-11-16
+"Real-time dashboard refresh would completely eliminate our manual report process",feature_request,2024-11-16
+"The API documentation is excellent and made our developer integration seamless",positive,2024-11-17
+"Our biggest pain point is report loading speed, everything else is excellent",feedback,2024-11-17
+"The granular permissions system for enterprise needs major improvements",feature_request,2024-11-18
+"App crashes on iPad Pro when presenting a dashboard in landscape orientation",support_ticket,2024-11-18
+"I love the product but the mobile performance keeps me from recommending it",feedback,2024-11-19
+"Loading spinner spins forever on some reports, they never actually load",support_ticket,2024-11-19
+"Can you add a data quality scoring feature to flag unreliable data sources?",feature_request,2024-11-20
+"The recent product update completely broke our most important saved reports",support_ticket,2024-11-20
+"Dark mode support would be a huge win for user accessibility and eye health",feature_request,2024-11-21
+"Slow reports are the only reason I haven't upgraded to the enterprise plan yet",feedback,2024-11-21
+"The time series analysis tools are absolutely best-in-class, genuinely impressive",positive,2024-11-22
+"Mobile app needs dark mode too, it's extremely bright in dark environments",feature_request,2024-11-22
+"Performance is the most critical thing to fix before adding any new features",feedback,2024-11-23
+"The new AI-assisted report builder cut our setup time from hours to minutes",positive,2024-11-23
+"Reports loading speed is literally costing us time in executive presentations",support_ticket,2024-11-24
+"We really need SOC 2 Type II compliance certification for enterprise procurement",feature_request,2024-11-24
+"The integration ecosystem is growing nicely, especially the Salesforce connector",positive,2024-11-25
+"App crashes on Firefox while Chrome works fine, please test cross-browser",support_ticket,2024-11-25
+"I need customizable email report templates with my company branding and logo",feature_request,2024-11-26
+"The data connection reliability improved significantly this month, less downtime",positive,2024-11-26
+"When I print reports the charts are completely missing from the printout",support_ticket,2024-11-27
+"Dark mode must be the most-requested feature of any SaaS product in history",feature_request,2024-11-27
+"The slow report loading is causing our team to switch to manual spreadsheets",review,2024-11-28
+"I'd love to see machine learning anomaly detection built directly into alerts",feature_request,2024-11-28
+"The product is genuinely getting better every month, thank you for listening",positive,2024-11-29
+"Report loading issue completely derailed our board presentation this morning",support_ticket,2024-11-29
+"Please prioritize performance over new features for the next full quarter",feedback,2024-11-30
+"Mobile app is effectively unusable for serious analysis work on the go",review,2024-11-30

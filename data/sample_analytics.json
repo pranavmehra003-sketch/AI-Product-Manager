@@ -1,0 +1,129 @@
+{
+  "product": "DataPulse Analytics",
+  "period": "Q3 2024 (July-September)",
+  "overall_dau": 12400,
+  "overall_mau": 48200,
+  "overall_retention_30d": 61.2,
+  "overall_churn_rate": 4.8,
+  "nps_score": 42,
+  "features": [
+    {
+      "name": "Reports",
+      "dau": 9672,
+      "mau": 37596,
+      "usage_percent": 78,
+      "retention_impact": "High",
+      "churn_correlation": 0.82,
+      "error_rate": 4.2,
+      "avg_session_duration_seconds": 420,
+      "trend": "Increasing",
+      "conversion_rate": 68.4,
+      "notes": "Most used feature but performance issues causing high churn correlation"
+    },
+    {
+      "name": "Dashboard",
+      "dau": 11284,
+      "mau": 43862,
+      "usage_percent": 91,
+      "retention_impact": "High",
+      "churn_correlation": 0.91,
+      "error_rate": 1.1,
+      "avg_session_duration_seconds": 680,
+      "trend": "Stable",
+      "conversion_rate": 82.1,
+      "notes": "Highest usage, strong retention driver"
+    },
+    {
+      "name": "Mobile App",
+      "dau": 4216,
+      "mau": 16388,
+      "usage_percent": 34,
+      "retention_impact": "Medium",
+      "churn_correlation": 0.34,
+      "error_rate": 8.7,
+      "avg_session_duration_seconds": 180,
+      "trend": "Decreasing",
+      "conversion_rate": 18.2,
+      "notes": "Declining usage, high crash rate post iOS17 update"
+    },
+    {
+      "name": "CSV Export",
+      "dau": 6820,
+      "mau": 26510,
+      "usage_percent": 55,
+      "retention_impact": "High",
+      "churn_correlation": 0.71,
+      "error_rate": 12.3,
+      "avg_session_duration_seconds": 90,
+      "trend": "Stable",
+      "conversion_rate": 44.8,
+      "notes": "Critical feature for data workflows, high error rate is blocking"
+    },
+    {
+      "name": "Alerts & Notifications",
+      "dau": 2728,
+      "mau": 10604,
+      "usage_percent": 22,
+      "retention_impact": "Medium",
+      "churn_correlation": 0.28,
+      "error_rate": 15.1,
+      "avg_session_duration_seconds": 45,
+      "trend": "Decreasing",
+      "conversion_rate": 12.4,
+      "notes": "Very high error rate, users are disabling alerts"
+    },
+    {
+      "name": "Collaboration",
+      "dau": 992,
+      "mau": 3856,
+      "usage_percent": 8,
+      "retention_impact": "Low",
+      "churn_correlation": 0.15,
+      "error_rate": 2.1,
+      "avg_session_duration_seconds": 300,
+      "trend": "Increasing",
+      "conversion_rate": 6.8,
+      "notes": "Early feature, growing interest from enterprise customers"
+    },
+    {
+      "name": "Search",
+      "dau": 8308,
+      "mau": 32294,
+      "usage_percent": 67,
+      "retention_impact": "High",
+      "churn_correlation": 0.58,
+      "error_rate": 6.8,
+      "avg_session_duration_seconds": 120,
+      "trend": "Stable",
+      "conversion_rate": 52.3,
+      "notes": "High usage but search relevance complaints increasing"
+    },
+    {
+      "name": "API Access",
+      "dau": 2232,
+      "mau": 8676,
+      "usage_percent": 18,
+      "retention_impact": "High",
+      "churn_correlation": 0.62,
+      "error_rate": 3.2,
+      "avg_session_duration_seconds": 250,
+      "trend": "Increasing",
+      "conversion_rate": 78.9,
+      "notes": "Power users with API access have 3x higher retention"
+    }
+  ],
+  "top_error_events": [
+    {"event": "report_load_timeout", "occurrences": 8420, "affected_users": 3120},
+    {"event": "csv_export_failure", "occurrences": 3680, "affected_users": 2140},
+    {"event": "mobile_app_crash", "occurrences": 5240, "affected_users": 1890},
+    {"event": "alert_delivery_failure", "occurrences": 2180, "affected_users": 980},
+    {"event": "search_no_results", "occurrences": 6100, "affected_users": 4200}
+  ],
+  "cohort_retention": {
+    "week_1": 78.4,
+    "week_2": 71.2,
+    "week_4": 61.2,
+    "week_8": 52.8,
+    "week_12": 46.1
+  }
+}

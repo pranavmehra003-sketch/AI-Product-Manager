@@ -1,0 +1,109 @@
+/* AI Product Manager — Premium Dark Theme */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --bg-primary: #0a0e1a;
+    --bg-secondary: #111827;
+    --bg-card: #1a2235;
+    --bg-card-hover: #1e2a3f;
+    --accent-blue: #3b82f6;
+    --accent-purple: #8b5cf6;
+    --accent-cyan: #06b6d4;
+    --accent-green: #10b981;
+    --accent-yellow: #f59e0b;
+    --accent-red: #ef4444;
+    --text-primary: #f1f5f9;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+    --border-color: #1e293b;
+    --p0-color: #ef4444;
+    --p1-color: #f97316;
+    --p2-color: #eab308;
+    --p3-color: #6b7280;
+}
+
+.stApp {
+    background: var(--bg-primary);
+    font-family: 'Inter', sans-serif;
+}
+
+/* Sidebar */
+[data-testid="stSidebar"] {
+    background: var(--bg-secondary) !important;
+    border-right: 1px solid var(--border-color);
+}
+
+[data-testid="stSidebar"] * {
+    color: var(--text-primary) !important;
+}
+
+/* Headers */
+h1, h2, h3, h4 {
+    color: var(--text-primary) !important;
+    font-family: 'Inter', sans-serif !important;
+}
+
+/* Metric Cards */
+[data-testid="metric-container"] {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 16px;
+}
+
+/* Priority Badges */
+.badge-p0 {
+    background: rgba(239,68,68,0.15);
+    color: #ef4444;
+    border: 1px solid rgba(239,68,68,0.3);
+    padding: 2px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+.badge-p1 {
+    background: rgba(249,115,22,0.15);
+    color: #f97316;
+    border: 1px solid rgba(249,115,22,0.3);
+    padding: 2px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+.badge-p2 {
+    background: rgba(234,179,8,0.15);
+    color: #eab308;
+    border: 1px solid rgba(234,179,8,0.3);
+    padding: 2px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+.badge-p3 {
+    background: rgba(107,114,128,0.15);
+    color: #9ca3af;
+    border: 1px solid rgba(107,114,128,0.3);
+    padding: 2px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* Agent Status */
+.agent-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 16px;
+    margin: 8px 0;
+    transition: all 0.3s ease;
+}
+.agent-success { border-left: 3px solid var(--accent-green); }
+.agent-running { border-left: 3px solid var(--accent-blue); animation: pulse 1.5s infinite; }
+.agent-error { border-left: 3px solid var(--accent-red); }
+.agent-pending { border-left: 3px solid var(--text-muted); }
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+}
