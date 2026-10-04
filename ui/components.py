@@ -45,9 +45,9 @@ def render_header():
     """Render the BhashaSetu-style glassmorphism hero header."""
     st.markdown("""
     <header style="text-align:center; padding: 1.8rem 0 1rem 0;" role="banner">
-        <div style="display:flex; justify-content:center; align-items:center; gap:12px; margin-bottom:14px; flex-wrap:wrap;">
+        <div class="hero-badges-container">
             <div class="hero-badge">
-                <span style="font-size:1.05rem;">🤖</span>
+                <span class="badge-icon">🤖</span>
                 <span>Multi-Agent Autonomous Product Intelligence</span>
             </div>
             <div class="status-badge-live">

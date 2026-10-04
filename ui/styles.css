@@ -70,20 +70,71 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--text-main) !important;
 }
 
-/* Hero Badge */
-.hero-badge {
-    display: inline-flex;
+/* Hero Badges Container & Perfect Alignment */
+.hero-badges-container {
+    display: flex;
     align-items: center;
-    gap: 8px;
-    padding: 6px 16px;
-    border-radius: 9999px;
-    background: rgba(56, 189, 248, 0.1);
-    border: 1px solid rgba(56, 189, 248, 0.25);
-    color: #7dd3fc;
-    font-size: 0.85rem;
-    font-weight: 600;
-    margin-bottom: 12px;
-    line-height: 1.45;
+    justify-content: center;
+    gap: 12px;
+    margin: 0 auto 18px auto;
+    flex-wrap: wrap;
+}
+
+.hero-badge,
+.status-badge-live {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 36px !important;
+    box-sizing: border-box !important;
+    padding: 0 16px !important;
+    margin: 0 !important;
+    border-radius: 9999px !important;
+    font-size: 0.84rem !important;
+    font-weight: 600 !important;
+    line-height: 1 !important;
+    vertical-align: middle !important;
+    white-space: nowrap !important;
+}
+
+.hero-badge {
+    background: rgba(56, 189, 248, 0.1) !important;
+    border: 1px solid rgba(56, 189, 248, 0.3) !important;
+    color: #7dd3fc !important;
+    gap: 8px !important;
+}
+
+.hero-badge .badge-icon {
+    font-size: 1rem !important;
+    line-height: 1 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+}
+
+.status-badge-live {
+    color: #34d399 !important;
+    background: rgba(16, 185, 129, 0.1) !important;
+    border: 1px solid rgba(16, 185, 129, 0.3) !important;
+    gap: 8px !important;
+}
+
+.status-dot {
+    width: 8px !important;
+    height: 8px !important;
+    min-width: 8px !important;
+    min-height: 8px !important;
+    border-radius: 50% !important;
+    background-color: #10b981 !important;
+    box-shadow: 0 0 10px #10b981 !important;
+    animation: pulse-green 2s infinite !important;
+    display: inline-block !important;
+    flex-shrink: 0 !important;
+}
+
+@keyframes pulse-green {
+    0% { transform: scale(0.95); opacity: 0.8; }
+    50% { transform: scale(1.2); opacity: 1; }
+    100% { transform: scale(0.95); opacity: 0.8; }
 }
 
 .hero-title {
@@ -105,35 +156,6 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 850px;
     line-height: 1.6;
     margin: 0 auto 20px auto;
-}
-
-/* Live Status Badge */
-.status-badge-live {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 0.82rem;
-    font-weight: 600;
-    color: #34d399;
-    background: rgba(16, 185, 129, 0.1);
-    border: 1px solid rgba(16, 185, 129, 0.25);
-    padding: 4px 12px;
-    border-radius: 9999px;
-}
-
-.status-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background-color: #10b981;
-    box-shadow: 0 0 10px #10b981;
-    animation: pulse-green 2s infinite;
-}
-
-@keyframes pulse-green {
-    0% { transform: scale(0.95); opacity: 0.8; }
-    50% { transform: scale(1.2); opacity: 1; }
-    100% { transform: scale(0.95); opacity: 0.8; }
 }
 
 /* Glassmorphism Cards */
