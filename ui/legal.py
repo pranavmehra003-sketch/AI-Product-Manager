@@ -24,34 +24,44 @@ BUSINESS_INFO = {
 }
 
 
+@st.dialog("🍪 Privacy & Necessary Cookies Notice")
+def cookie_dialog_modal():
+    """Native popup modal matching exact DPDP & Privacy layout."""
+    st.markdown(f"**{BUSINESS_INFO['app_name']} System**")
+    st.markdown(
+        "We process strictly necessary session tokens for multi-agent state orchestration and secure persona authentication."
+    )
+
+    st.markdown("""
+    <div style="background: rgba(14, 165, 233, 0.08); border: 1px solid rgba(14, 165, 233, 0.4); border-radius: 10px; padding: 14px; margin: 16px 0;">
+        <div style="font-size: 0.88rem; color: #e0f2fe; line-height: 1.5;">
+            🛡️ <strong>DPDP Act 2023 Compliant:</strong> Product queries and feedback are processed strictly in-memory with <strong>zero permanent biometric storage</strong> and <strong>zero third-party advertising trackers</strong>.
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
+
+    col1, col2 = st.columns(2)
+    with col1:
+        if st.button("Accept Necessary", type="primary", use_container_width=True, key="btn_accept_necessary"):
+            st.session_state.cookie_consent_given = True
+            st.session_state.show_cookie_modal = False
+            st.rerun()
+    with col2:
+        if st.button("Cookie Policy", use_container_width=True, key="btn_view_cookie_policy"):
+            st.session_state.cookie_consent_given = True
+            st.session_state.show_cookie_modal = False
+            st.session_state["nav_radio"] = "⚖️ Legal & Privacy Hub"
+            st.rerun()
+
+
 def render_cookie_consent():
-    """Render a persistent, non-intrusive cookie consent banner if unacknowledged."""
+    """Render the pop-out modal dialog on first load or when explicitly triggered."""
     if "cookie_consent_given" not in st.session_state:
         st.session_state.cookie_consent_given = False
 
-    if not st.session_state.cookie_consent_given:
-        st.markdown("""
-        <div style="background: #1e293b; border: 1px solid #3b82f6; border-radius: 12px; padding: 16px; margin: 12px 0 20px 0; box-shadow: 0 4px 20px rgba(0,0,0,0.4);" role="region" aria-label="Cookie and Privacy Consent Banner">
-            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
-                <div style="flex: 1; min-width: 280px;">
-                    <span style="font-size: 1.1rem; margin-right: 6px;">🍪</span>
-                    <strong style="color: #f8fafc; font-size: 0.95rem;">Privacy & Cookie Notice:</strong>
-                    <p style="color: #cbd5e1; font-size: 0.85rem; margin: 4px 0 0 0; line-height: 1.4;">
-                        We use strictly essential session cookies and local storage to run this interactive multi-agent workspace. We do not use third-party cross-site advertising cookies or behavioral tracking pixels. By continuing, you agree to our <a href="#privacy" style="color: #60a5fa; text-decoration: underline;">Privacy Policy</a>.
-                    </p>
-                </div>
-            </div>
-        </div>
-        """, unsafe_allow_html=True)
-        col1, col2, col3 = st.columns([2, 2, 4])
-        with col1:
-            if st.button("✅ Accept Essential Cookies", key="btn_accept_cookies", use_container_width=True):
-                st.session_state.cookie_consent_given = True
-                st.rerun()
-        with col2:
-            if st.button("⚙️ Cookie Preferences", key="btn_pref_cookies", use_container_width=True):
-                st.session_state.show_cookie_modal = True
-                st.rerun()
+    if not st.session_state.cookie_consent_given or st.session_state.get("show_cookie_modal", False):
+        cookie_dialog_modal()
+
 
 
 def render_legal_hub():
@@ -261,3 +271,8 @@ def render_legal_footer():
         </div>
     </div>
     """, unsafe_allow_html=True)
+    col1, col2, col3 = st.columns([3, 2, 3])
+    with col2:
+        if st.button("🍪 Cookie Preferences", key="btn_footer_cookie_prefs", use_container_width=True):
+            st.session_state.show_cookie_modal = True
+            st.rerun()
