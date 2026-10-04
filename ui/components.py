@@ -42,51 +42,58 @@ STATUS_ICONS = {
 # ─── Header Components ────────────────────────────────────────────────────────
 
 def render_header():
-    """Render the main app header with accessibility tags and AI transparency disclosure."""
+    """Render the BhashaSetu-style glassmorphism hero header."""
     st.markdown("""
-    <header style="text-align:center; padding: 1.5rem 0 0.8rem 0;" role="banner">
-        <div style="font-size:3rem; margin-bottom:0.3rem;" role="img" aria-label="AI Robot Assistant">🤖</div>
-        <h1 style="background: linear-gradient(135deg, #38bdf8, #818cf8, #34d399);
-                   -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-                   font-size: 2.2rem; font-weight: 800; margin: 0; letter-spacing: -0.02em;">
+    <header style="text-align:center; padding: 1.8rem 0 1rem 0;" role="banner">
+        <div style="display:flex; justify-content:center; align-items:center; gap:12px; margin-bottom:14px; flex-wrap:wrap;">
+            <div class="hero-badge">
+                <span style="font-size:1.05rem;">🤖</span>
+                <span>Multi-Agent Autonomous Product Intelligence</span>
+            </div>
+            <div class="status-badge-live">
+                <span class="status-dot"></span>
+                <span>System Online • Gemini 3.8 Live</span>
+            </div>
+        </div>
+        <h1 class="hero-title">
             AI Product Manager
         </h1>
-        <p style="color: #cbd5e1; font-size: 1rem; margin: 0.4rem 0 0.6rem 0; font-weight: 500;">
-            Multi-Agent Product Intelligence System
+        <p class="hero-subtitle">
+            Autonomous multi-agent product intelligence: from customer feedback ingestion and competitor gap discovery to prioritized roadmap scoring and sprint-ready PRD synthesis.
         </p>
-        <div style="display:inline-flex; align-items:center; gap:8px; background: rgba(59, 130, 246, 0.12); border: 1px solid rgba(59, 130, 246, 0.35); border-radius: 9999px; padding: 4px 14px; font-size: 0.78rem; color: #93c5fd;">
-            <span>🛡️ Decision-Support Tool</span>
-            <span>•</span>
-            <span>EU AI Act Art. 50 Compliant (Synthesized Drafts Require Human Review)</span>
-        </div>
     </header>
     """, unsafe_allow_html=True)
 
 
 def render_workflow_steps(current_step: int):
-    """Render the workflow progress bar."""
+    """Render the workflow progress bar with glassmorphic step pills."""
     steps = ["Configure", "Analyze", "Prioritize", "Approve", "PRD", "Sprint", "Done"]
     cols = st.columns(len(steps))
     for i, (col, step) in enumerate(zip(cols, steps)):
         with col:
             if i < current_step:
-                color = "#10b981"
+                bg = "rgba(16, 185, 129, 0.18)"
+                border = "rgba(16, 185, 129, 0.45)"
+                text_color = "#34d399"
                 icon = "✓"
             elif i == current_step:
-                color = "#3b82f6"
+                bg = "rgba(56, 189, 248, 0.2)"
+                border = "rgba(56, 189, 248, 0.6)"
+                text_color = "#38bdf8"
                 icon = str(i + 1)
             else:
-                color = "#374151"
+                bg = "rgba(15, 23, 42, 0.6)"
+                border = "rgba(255, 255, 255, 0.08)"
+                text_color = "#94a3b8"
                 icon = str(i + 1)
             st.markdown(f"""
-            <div style="text-align:center;">
-                <div style="width:32px; height:32px; border-radius:50%;
-                            background:{color}; color:white; font-weight:700;
-                            font-size:0.85rem; display:flex; align-items:center;
-                            justify-content:center; margin:0 auto 4px auto;">
+            <div style="text-align:center; background:{bg}; border:1px solid {border};
+                        border-radius:12px; padding:10px 4px; backdrop-filter:blur(10px);
+                        transition:all 0.3s ease; box-shadow:0 4px 12px rgba(0,0,0,0.3);">
+                <div style="font-size:0.95rem; font-weight:800; color:{text_color}; margin-bottom:2px;">
                     {icon}
                 </div>
-                <div style="font-size:0.7rem; color:{'#f1f5f9' if i <= current_step else '#64748b'};">
+                <div style="font-size:0.75rem; font-weight:600; color:{text_color};">
                     {step}
                 </div>
             </div>

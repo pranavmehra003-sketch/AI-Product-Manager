@@ -35,27 +35,6 @@ def load_css():
 
 load_css()
 
-# ─── Extra Inline Styles ─────────────────────────────────────────────────────
-st.markdown("""
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-.stApp { background: #0a0e1a; font-family: 'Inter', sans-serif; }
-[data-testid="stSidebar"] { background: #111827 !important; border-right: 1px solid #1e293b; }
-[data-testid="stSidebar"] * { color: #f1f5f9 !important; }
-.stTabs [data-baseweb="tab-list"] { background: #111827; border-radius: 10px; gap: 4px; }
-.stTabs [data-baseweb="tab"] { color: #94a3b8; border-radius: 8px; }
-.stTabs [aria-selected="true"] { background: #1e293b; color: #f1f5f9 !important; }
-.stButton > button { border-radius: 10px; font-weight: 600; transition: all 0.2s ease; }
-.stFileUploader { border-radius: 12px; }
-div[data-testid="stMetric"] { background: #111827; border: 1px solid #1e293b; border-radius: 12px; padding: 16px; }
-div[data-testid="stMetric"] label { color: #94a3b8 !important; font-size: 0.8rem !important; }
-div[data-testid="stMetric"] div { color: #f1f5f9 !important; }
-.stExpander { border: 1px solid #1e293b !important; border-radius: 10px !important; }
-.stAlert { border-radius: 10px !important; }
-textarea, input, select { background: #111827 !important; color: #f1f5f9 !important; border: 1px solid #1e293b !important; border-radius: 8px !important; }
-</style>
-""", unsafe_allow_html=True)
-
 # ─── Imports after path setup ─────────────────────────────────────────────────
 from agents.orchestrator import Orchestrator
 from tools.openai_tool import (
