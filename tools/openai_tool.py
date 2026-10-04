@@ -74,7 +74,7 @@ def _get_gemini_model():
     import google.generativeai as genai
     genai.configure(api_key=api_key)
 
-    model_name = os.getenv("GEMINI_MODEL", "gemini-2.0-flash")
+    model_name = os.getenv("GEMINI_MODEL", "gemini-3.8-flash")
     generation_config = {
         "temperature": 0.2,
         "top_p": 0.95,
@@ -95,7 +95,7 @@ def _get_gemini_model():
 
 
 def get_gemini_model_name() -> str:
-    return os.getenv("GEMINI_MODEL", "gemini-2.0-flash")
+    return os.getenv("GEMINI_MODEL", "gemini-3.8-flash")
 
 
 # ─── OpenAI Setup ─────────────────────────────────────────────────────────────
