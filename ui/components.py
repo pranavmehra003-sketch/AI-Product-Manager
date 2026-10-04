@@ -42,19 +42,24 @@ STATUS_ICONS = {
 # ─── Header Components ────────────────────────────────────────────────────────
 
 def render_header():
-    """Render the main app header."""
+    """Render the main app header with accessibility tags and AI transparency disclosure."""
     st.markdown("""
-    <div style="text-align:center; padding: 2rem 0 1rem 0;">
-        <div style="font-size:3rem; margin-bottom:0.5rem;">🤖</div>
-        <h1 style="background: linear-gradient(135deg, #3b82f6, #8b5cf6, #06b6d4);
+    <header style="text-align:center; padding: 1.5rem 0 0.8rem 0;" role="banner">
+        <div style="font-size:3rem; margin-bottom:0.3rem;" role="img" aria-label="AI Robot Assistant">🤖</div>
+        <h1 style="background: linear-gradient(135deg, #38bdf8, #818cf8, #34d399);
                    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-                   font-size: 2.2rem; font-weight: 800; margin: 0;">
+                   font-size: 2.2rem; font-weight: 800; margin: 0; letter-spacing: -0.02em;">
             AI Product Manager
         </h1>
-        <p style="color: #94a3b8; font-size: 1rem; margin: 0.5rem 0 0 0;">
+        <p style="color: #cbd5e1; font-size: 1rem; margin: 0.4rem 0 0.6rem 0; font-weight: 500;">
             Multi-Agent Product Intelligence System
         </p>
-    </div>
+        <div style="display:inline-flex; align-items:center; gap:8px; background: rgba(59, 130, 246, 0.12); border: 1px solid rgba(59, 130, 246, 0.35); border-radius: 9999px; padding: 4px 14px; font-size: 0.78rem; color: #93c5fd;">
+            <span>🛡️ Decision-Support Tool</span>
+            <span>•</span>
+            <span>EU AI Act Art. 50 Compliant (Synthesized Drafts Require Human Review)</span>
+        </div>
+    </header>
     """, unsafe_allow_html=True)
 
 

@@ -63,6 +63,7 @@ from tools.openai_tool import (
     get_active_provider, get_active_model_display,
 )
 from tools.file_tool import parse_feedback_csv, parse_analytics_json, validate_feedback_list
+from ui.legal import render_cookie_consent, render_legal_hub, render_legal_footer
 from ui.components import (
     render_header, render_workflow_steps, render_all_agent_statuses,
     render_priority_table, render_feature_approval, render_prd,
@@ -173,6 +174,7 @@ with st.sidebar:
         "📝 PRD Library",
         "🗄️ Session History",
         "⚙️ Error Logs",
+        "⚖️ Legal & Privacy Hub",
     ]
     nav = st.radio("Navigation", nav_options, label_visibility="collapsed", key="nav_radio")
 
@@ -265,13 +267,23 @@ if "New Analysis" in nav:
                 key="use_sample_check",
             )
 
+        st.markdown("### 🔒 Data Privacy & Compliance Verification")
+        form_consent = st.checkbox(
+            "I consent to the processing of the entered product data and uploaded feedback in accordance with the Privacy Policy, and confirm that the data contains no unauthorized Personal Identifiable Information (PII) or confidential secrets.",
+            value=False,
+            key="form_consent_checkbox",
+            help="Required by GDPR and data protection laws before data is transmitted to AI inference models."
+        )
+
         st.markdown("---")
         col_btn1, col_btn2, col_btn3 = st.columns([1, 1, 2])
         with col_btn1:
             start_btn = st.button("🚀 Start AI Analysis", type="primary", use_container_width=True, key="start_btn")
 
         if start_btn:
-            if not is_api_key_configured():
+            if not form_consent:
+                render_error_banner("⚠️ Consent required: Please check the compliance verification box above before starting analysis.")
+            elif not is_api_key_configured():
                 render_error_banner("Please configure your Google Gemini (or OpenAI) API key in the sidebar first.")
             else:
                 # Load feedback
@@ -806,6 +818,16 @@ elif "Error Logs" in nav:
             st.success("✅ No errors logged.")
     except Exception as e:
         st.warning(f"Could not load error logs: {e}")
+
+
+# ─── LEGAL & PRIVACY HUB TAB ──────────────────────────────────────────────────
+elif "Legal & Privacy Hub" in nav:
+    render_legal_hub()
+
+# ─── Cookie Consent & Legal Footer (Always Available) ─────────────────────────
+render_cookie_consent()
+render_legal_footer()
+
 
 
 # ─── Sample Data Helpers ──────────────────────────────────────────────────────
