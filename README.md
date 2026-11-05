@@ -77,7 +77,7 @@ python run.py
 streamlit run ui/app.py
 ```
 
-Open **https://sprint-craft.streamlit.app** (or http://localhost:8501 when running locally)
+Open **https://sprint-craft.streamlit.app**
 
 ## 📁 Project Structure
 
