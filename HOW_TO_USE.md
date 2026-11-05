@@ -1,6 +1,16 @@
 # 🚀 AI Product Manager — Quick Start
 
-## ✅ **#1 Easiest way (double-click)**
+## 🌐 **Live App**
+
+The app is deployed and publicly accessible at:
+
+> **[https://sprint-craft.streamlit.app](https://sprint-craft.streamlit.app)**
+
+No installation needed — just open the link in any browser!
+
+---
+
+## ✅ **#1 Run locally (double-click)**
 
 1. Open the folder: `D:\AI Product Manager`
 2. **Double-click:**

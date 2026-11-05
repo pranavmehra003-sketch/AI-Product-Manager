@@ -52,8 +52,15 @@ def render_header():
             </div>
             <div class="status-badge-live">
                 <span class="status-dot"></span>
-                <span>System Online • Gemini 3.8 Live</span>
+                <span>System Online • Gemini 2.0 Live</span>
             </div>
+            <a href="https://sprint-craft.streamlit.app" target="_blank"
+               style="text-decoration:none; background:rgba(56,189,248,0.08);
+                      border:1px solid rgba(56,189,248,0.3); border-radius:20px;
+                      padding:4px 14px; font-size:0.75rem; color:#38bdf8;
+                      display:inline-flex; align-items:center; gap:5px;">
+                🌐 sprint-craft.streamlit.app
+            </a>
         </div>
         <h1 class="hero-title">
             AI Product Manager

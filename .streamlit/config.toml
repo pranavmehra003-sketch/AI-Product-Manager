@@ -1,0 +1,22 @@
+# Streamlit configuration for sprint-craft.streamlit.app
+# This file controls behaviour on Streamlit Community Cloud and locally.
+
+[server]
+headless = true                   # Required for cloud deployment
+enableCORS = false                # Streamlit Cloud handles CORS
+enableXsrfProtection = true       # Keep XSRF protection on
+maxUploadSize = 50                # MB — allow larger feedback CSV / analytics JSON uploads
+
+[browser]
+gatherUsageStats = false          # Disable telemetry
+
+[theme]
+base = "dark"
+primaryColor = "#38bdf8"
+backgroundColor = "#070a12"
+secondaryBackgroundColor = "#0d121d"
+textColor = "#f8fafc"
+font = "sans serif"
+
+[logger]
+level = "warning"                 # Reduce log noise in production

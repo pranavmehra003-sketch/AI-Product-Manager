@@ -3,10 +3,11 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-# Environment variables & secrets (CRITICAL)
+# Environment variables & secrets (CRITICAL — never commit these)
 .env
 *.env
 !.env.example
+.streamlit/secrets.toml
 
 # Virtual environments
 .venv/

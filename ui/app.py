@@ -43,6 +43,8 @@ from tools.openai_tool import (
 )
 from tools.file_tool import parse_feedback_csv, parse_analytics_json, validate_feedback_list
 from ui.legal import render_cookie_consent, render_legal_hub, render_legal_footer
+from tools.export_tool import prd_to_markdown, sprint_to_markdown, features_to_csv, competitor_to_markdown
+import agents.roadmap_agent as roadmap_agent
 from ui.components import (
     render_header, render_workflow_steps, render_all_agent_statuses,
     render_priority_table, render_feature_approval, render_prd,
@@ -151,6 +153,7 @@ with st.sidebar:
         "🚀 New Analysis",
         "📊 View Results",
         "📝 PRD Library",
+        "📅 Roadmap",
         "🗄️ Session History",
         "⚙️ Error Logs",
         "⚖️ Legal & Privacy Hub",
@@ -423,6 +426,14 @@ if "New Analysis" in nav:
             col_left, col_right = st.columns([3, 2])
             with col_left:
                 render_priority_table(pr.get("features", []))
+                if pr.get("features"):
+                    st.download_button(
+                        "📥 Download Features (CSV)",
+                        data=features_to_csv(pr.get("features", [])),
+                        file_name="feature_priorities.csv",
+                        mime="text/csv",
+                        key="download_features_csv",
+                    )
             with col_right:
                 st.markdown("**Priority Score Chart**")
                 render_priority_chart(pr.get("features", []))
@@ -550,13 +561,23 @@ if "New Analysis" in nav:
                 render_prd(prd)
                 st.markdown("---")
                 # Download button
-                st.download_button(
-                    f"⬇️ Download PRD: {prd.get('feature_name','Feature')}",
-                    data=json.dumps(prd, indent=2),
-                    file_name=f"prd_{prd.get('feature_name','feature').lower().replace(' ', '_')}.json",
-                    mime="application/json",
-                    key=f"download_prd_{prd.get('feature_name','').replace(' ','_')}",
-                )
+                col_dl1, col_dl2 = st.columns(2)
+                with col_dl1:
+                    st.download_button(
+                        f"⬇️ Download PRD (JSON): {prd.get('feature_name','Feature')}",
+                        data=json.dumps(prd, indent=2),
+                        file_name=f"prd_{prd.get('feature_name','feature').lower().replace(' ', '_')}.json",
+                        mime="application/json",
+                        key=f"download_prd_json_{prd.get('feature_name','').replace(' ','_')}",
+                    )
+                with col_dl2:
+                    st.download_button(
+                        f"📄 Download PRD (Markdown): {prd.get('feature_name','Feature')}",
+                        data=prd_to_markdown(prd),
+                        file_name=f"prd_{prd.get('feature_name','feature').lower().replace(' ', '_')}.md",
+                        mime="text/markdown",
+                        key=f"download_prd_md_{prd.get('feature_name','').replace(' ','_')}",
+                    )
 
         col_btn1, col_btn2 = st.columns([1, 3])
         with col_btn1:
@@ -597,13 +618,23 @@ if "New Analysis" in nav:
                     st.markdown(f"⚠️ {risk}")
 
             # Download
-            st.download_button(
-                "⬇️ Download Sprint Plan (JSON)",
-                data=json.dumps(sprint, indent=2),
-                file_name=f"sprint_{sprint.get('sprint_number', 1)}_plan.json",
-                mime="application/json",
-                key="download_sprint_btn",
-            )
+            col_spdl1, col_spdl2 = st.columns(2)
+            with col_spdl1:
+                st.download_button(
+                    "⬇️ Download Sprint Plan (JSON)",
+                    data=json.dumps(sprint, indent=2),
+                    file_name=f"sprint_{sprint.get('sprint_number', 1)}_plan.json",
+                    mime="application/json",
+                    key="download_sprint_json_btn",
+                )
+            with col_spdl2:
+                st.download_button(
+                    "📄 Download Sprint Plan (Markdown)",
+                    data=sprint_to_markdown(sprint),
+                    file_name=f"sprint_{sprint.get('sprint_number', 1)}_plan.md",
+                    mime="text/markdown",
+                    key="download_sprint_md_btn",
+                )
 
         col_btn1, col_btn2 = st.columns([1, 3])
         with col_btn1:
@@ -749,6 +780,95 @@ elif "PRD Library" in nav:
             )
     else:
         st.info("No PRDs generated yet. Complete an analysis first.")
+
+
+# ─── ROADMAP TAB ──────────────────────────────────────────────────────────────
+elif "Roadmap" in nav:
+    st.markdown("## 📅 Product Roadmap")
+
+    orch = st.session_state.orchestrator
+    if not orch:
+        st.info("No active session. Start a new analysis first to generate a roadmap.")
+    else:
+        state = orch.get_state()
+        pr = state.prioritization_result
+
+        if not pr or not pr.get("features"):
+            st.info("Complete the analysis and prioritization steps first to generate a roadmap.")
+        else:
+            st.markdown("Generate a **Now / Next / Later** strategic roadmap based on your prioritized features.")
+
+            if st.button("🗺️ Generate Roadmap", type="primary", key="gen_roadmap_btn"):
+                with st.spinner("AI is generating your product roadmap..."):
+                    result = roadmap_agent.run(
+                        prioritization_result=pr,
+                        product_name=state.product_name,
+                        business_goals=state.business_goals,
+                        session_id=orch.session_id,
+                    )
+                    if result.status == "success":
+                        st.session_state["roadmap_data"] = result.data
+                    else:
+                        render_error_banner(f"Roadmap generation failed: {result.error}")
+
+            roadmap = st.session_state.get("roadmap_data")
+            if roadmap:
+                st.success(f"✅ Roadmap generated for **{roadmap.get('product_name', '')}**")
+                st.info(roadmap.get("roadmap_summary", ""))
+
+                bucket_colors = {"now": "#10b981", "next": "#3b82f6", "later": "#a855f7"}
+                bucket_labels = {"now": "🟢 Now (This Quarter)", "next": "🔵 Next (Next Quarter)", "later": "🟣 Later (Future)"}
+
+                cols = st.columns(3)
+                for col, bucket in zip(cols, ["now", "next", "later"]):
+                    with col:
+                        bdata = roadmap.get(bucket, {})
+                        color = bucket_colors[bucket]
+                        label = bucket_labels[bucket]
+                        st.markdown(f"""
+                        <div style="border-top:3px solid {color}; background:rgba(26,34,53,0.8);
+                                    border-radius:12px; padding:16px; margin-bottom:12px;">
+                            <div style="color:{color}; font-weight:700; font-size:1rem; margin-bottom:6px;">
+                                {label}
+                            </div>
+                            <div style="color:#f1f5f9; font-weight:600; font-size:0.85rem; margin-bottom:4px;">
+                                🎯 {bdata.get('theme', '')}
+                            </div>
+                            <div style="color:#94a3b8; font-size:0.8rem; margin-bottom:10px;">
+                                {bdata.get('objective', '')}
+                            </div>
+                        </div>
+                        """, unsafe_allow_html=True)
+                        st.markdown("**Features:**")
+                        for feat in bdata.get("features", []):
+                            st.markdown(f"- {feat}")
+                        st.markdown(f"**Expected Impact:** {bdata.get('expected_impact', 'TBD')}")
+                        if bdata.get("kpis"):
+                            st.markdown("**KPIs:**")
+                            for kpi in bdata["kpis"]:
+                                st.markdown(f"- 📊 {kpi}")
+
+                st.markdown("---")
+                col_r1, col_r2 = st.columns(2)
+                with col_r1:
+                    if roadmap.get("risks"):
+                        st.markdown("**⚠️ Roadmap Risks**")
+                        for risk in roadmap["risks"]:
+                            st.markdown(f"- {risk}")
+                with col_r2:
+                    if roadmap.get("dependencies"):
+                        st.markdown("**🔗 Key Dependencies**")
+                        for dep in roadmap["dependencies"]:
+                            st.markdown(f"- {dep}")
+
+                st.markdown("---")
+                st.download_button(
+                    "⬇️ Download Roadmap (JSON)",
+                    data=json.dumps(roadmap, indent=2),
+                    file_name="product_roadmap.json",
+                    mime="application/json",
+                    key="download_roadmap_btn",
+                )
 
 
 # ─── SESSION HISTORY TAB ──────────────────────────────────────────────────────

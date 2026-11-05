@@ -1,6 +1,6 @@
 # 🤖 AI Product Manager — Multi-Agent Product Intelligence System
 
-A comprehensive multi-agent AI system that automates the full product management lifecycle: from raw customer feedback to sprint-ready plans.
+A comprehensive multi-agent AI system that automates the full product management lifecycle: from raw customer feedback to sprint-ready plans, PRDs, and a quarterly roadmap.
 
 ## 🏗️ Architecture
 
@@ -23,25 +23,28 @@ Prioritization Agent
 PRD Writer Agent
      ↓
 Sprint Planner Agent
+     ↓
+Roadmap Agent (on-demand)
 ```
 
-## 🤖 6 AI Agents
+## 🤖 7 AI Agents
 
 | Agent | Role |
 |---|---|
 | **Feedback Agent** | Analyzes customer feedback → issues, features, sentiment |
-| **Competitor Agent** | Web search + GPT-4o → competitive intelligence |
+| **Competitor Agent** | Web search + LLM → competitive intelligence |
 | **Analytics Agent** | Product metrics → trends, risks, opportunities |
 | **Prioritization Agent** | Weighted scoring formula → ranked roadmap |
 | **PRD Writer Agent** | RAG-enhanced → 14-section PRDs |
 | **Sprint Planner Agent** | PRD + capacity → sprint tasks |
+| **Roadmap Agent** | Prioritized features → Now/Next/Later quarterly roadmap |
 
 ## 🛠️ Technology Stack
 
 | Layer | Technology |
 |---|---|
 | UI | Streamlit (premium dark theme) |
-| AI | OpenAI GPT-4o / GPT-4o-mini |
+| AI | Google Gemini 2.0 Flash / OpenAI GPT-4o-mini |
 | Agents | Python with concurrent.futures (parallel) |
 | Database | SQLite (long-term memory) |
 | Vector DB | ChromaDB (RAG) |
@@ -60,7 +63,9 @@ pip install -r requirements.txt
 
 ```bash
 copy .env.example .env
-# Edit .env and add your OpenAI API key:
+# Edit .env and add your API key:
+# GOOGLE_API_KEY=your_gemini_key_here   (recommended)
+# or
 # OPENAI_API_KEY=sk-...
 ```
 
@@ -72,7 +77,7 @@ python run.py
 streamlit run ui/app.py
 ```
 
-Open http://localhost:8501
+Open **https://sprint-craft.streamlit.app** (or http://localhost:8501 when running locally)
 
 ## 📁 Project Structure
 
@@ -85,12 +90,14 @@ ai-product-manager/
 │   ├── analytics_agent.py      # Product metrics analysis
 │   ├── prioritization_agent.py # Feature scoring & ranking
 │   ├── prd_agent.py            # PRD generation (RAG-enhanced)
-│   └── sprint_agent.py         # Sprint planning
+│   ├── sprint_agent.py         # Sprint planning
+│   └── roadmap_agent.py        # Now/Next/Later roadmap generator ✨
 ├── tools/
-│   ├── openai_tool.py          # GPT-4o wrapper
+│   ├── openai_tool.py          # Multi-provider LLM wrapper (Gemini + OpenAI)
 │   ├── search_tool.py          # DuckDuckGo search
 │   ├── database_tool.py        # SQLite operations
 │   ├── file_tool.py            # CSV/JSON parsing
+│   ├── export_tool.py          # Markdown/CSV export ✨
 │   └── error_handler.py        # Retry & error logging
 ├── memory/
 │   ├── short_term.py           # Session context store
@@ -141,16 +148,17 @@ Priority Score =
 4. **Approve**: PM reviews and approves features (human-in-the-loop)
 5. **PRD**: AI generates full 14-section PRDs with RAG context
 6. **Sprint**: AI creates task-level sprint plan with story points
+7. **Roadmap**: Generate Now/Next/Later quarterly roadmap ✨
 
 ## 🔑 Requirements
 
 - Python 3.10+
-- OpenAI API key (GPT-4o-mini works well and is cost-efficient)
+- Google Gemini API key (recommended) or OpenAI API key
 - Internet connection (for DuckDuckGo competitor search)
 
 ## 📊 Key Features
 
-- ✅ 6 specialized AI agents with structured JSON outputs
+- ✅ 7 specialized AI agents with structured JSON outputs
 - ✅ Parallel agent execution (3x faster analysis)
 - ✅ Human-in-the-loop approval checkpoint
 - ✅ RAG-enhanced PRD generation
@@ -158,6 +166,10 @@ Priority Score =
 - ✅ ChromaDB vector store for product knowledge
 - ✅ Weighted multi-factor feature scoring
 - ✅ Sprint board visualization
-- ✅ Download PRDs and sprint plans as JSON
+- ✅ Now/Next/Later quarterly roadmap generation ✨
+- ✅ Download PRDs as JSON **or Markdown** ✨
+- ✅ Download Sprint Plans as JSON **or Markdown** ✨
+- ✅ Download Feature Priorities as **CSV** ✨
 - ✅ Error logging and retry logic
 - ✅ Premium dark-themed Streamlit UI
+- ✅ Google Gemini 2.0 Flash support (default) ✨
