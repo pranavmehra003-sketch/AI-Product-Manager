@@ -1,4 +1,7 @@
-# 🤖 AI Product Manager — Multi-Agent Product Intelligence System
+# 🤖 AI Product Manager (SprintCraft) — Multi-Agent Product Intelligence System
+
+> **Developed by [Pranav Mehra](https://github.com/pranavmehra003-sketch)** • [pranavmehra003@gmail.com](mailto:pranavmehra003@gmail.com)  
+> 🌐 **Live App:** [https://sprint-craft.streamlit.app](https://sprint-craft.streamlit.app) • 📖 **Full Specs:** [DOCUMENTATION.md](file:///d:/AI-Product-Manager-main/AI-Product-Manager-main/DOCUMENTATION.md)
 
 A comprehensive multi-agent AI system that automates the full product management lifecycle: from raw customer feedback to sprint-ready plans, PRDs, and a quarterly roadmap.
 
@@ -173,3 +176,12 @@ Priority Score =
 - ✅ Error logging and retry logic
 - ✅ Premium dark-themed Streamlit UI
 - ✅ Google Gemini 2.0 Flash support (default) ✨
+
+## 👨‍💻 Author & Credits
+
+- **Creator:** **Pranav Mehra**
+- **GitHub:** [@pranavmehra003-sketch](https://github.com/pranavmehra003-sketch)
+- **Email:** [pranavmehra003@gmail.com](mailto:pranavmehra003@gmail.com)
+- **Live Demo:** [https://sprint-craft.streamlit.app](https://sprint-craft.streamlit.app)
+- **Full Architecture & Technical Docs:** See [DOCUMENTATION.md](DOCUMENTATION.md)
+

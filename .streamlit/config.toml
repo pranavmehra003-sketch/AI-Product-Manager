@@ -20,3 +20,4 @@ font = "sans serif"
 
 [logger]
 level = "warning"                 # Reduce log noise in production
+
